@@ -1,0 +1,27 @@
+server:
+  port: 9002
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///springcloud
+    username: root
+    password: root
+  application:
+    name: user-service
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.itheima.user.entity
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    registry-fetch-interval-seconds: 30
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+logging:
+  level:
+    com.itheima: debug
